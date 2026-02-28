@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SilentStress Chatbot - History</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .history-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .history-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .history-meta {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .history-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-animation"></div>
+    <div class="container" style="padding-top: 2rem;">
+        <header style="padding: 0 0 2rem 0; border-bottom: 1px solid var(--border-color);">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <a href="index.html" class="logo">SilentStress AI</a>
+                <nav>
+                    <a href="chat.html" class="btn btn-outline" style="margin-right: 1rem;">Back to Chat</a>
+                    <button id="logout-btn" class="btn btn-outline"
+                        style="border-color: rgba(239, 68, 68, 0.5); color: #ef4444;">Logout</button>
+                </nav>
+            </div>
+        </header>
+
+        <main style="margin-top: 3rem;">
+            <h1>Your Chat History</h1>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Review your past sessions and interactions.</p>
+
+            <div id="loader" class="loader" style="display: block; margin: 0 auto;"></div>
+            <div class="history-grid" id="history-grid">
+                <!-- History cards injected here -->
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/history.js"></script>
+</body>
+
+</html>

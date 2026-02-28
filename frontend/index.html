@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SilentStress Chatbot - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="container hero-container">
+        <header>
+            <div class="logo">SilentStress AI</div>
+            <nav id="nav-menu">
+                <a href="login.html" class="btn btn-outline" id="login-nav">Login / Register</a>
+                <a href="chat.html" class="btn btn-primary" id="chat-nav" style="display:none;">Go to Chat</a>
+            </nav>
+        </header>
+
+        <main class="hero">
+            <div class="hero-content">
+                <h1>Listen to what your <span class="highlight">words</span> reveal.</h1>
+                <p>Advanced AI stress detection built into a seamless, secure chatting experience. Discover insights about your mental well-being implicitly.</p>
+                <div class="hero-actions">
+                    <a href="login.html" class="btn btn-primary btn-lg" id="cta-btn">Get Started</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="glass-card mockup-card">
+                    <div class="chat-bubble user-bubble">I've been working late a lot recently...</div>
+                    <div class="chat-bubble sys-bubble">
+                        I sense some stress. Take a deep breath. I'm here to listen.
+                        <span class="badge badge-stress">Stress Detected</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (isAuthenticated()) {
+                document.getElementById('login-nav').style.display = 'none';
+                document.getElementById('chat-nav').style.display = 'inline-block';
+                document.getElementById('cta-btn').href = 'chat.html';
+                document.getElementById('cta-btn').innerText = 'Start Chatting';
+            }
+        });
+    </script>
+</body>
+</html>

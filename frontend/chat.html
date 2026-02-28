@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SilentStress Chatbot - Chat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="background-animation"></div>
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo">SilentStress AI</a>
+            </div>
+
+            <button id="new-chat-btn" class="btn btn-primary" style="margin-bottom: 2rem; width: 100%;">+ New
+                Session</button>
+
+            <h3
+                style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; letter-spacing: 1px;">
+                Recent Sessions</h3>
+            <div class="session-list" id="session-list">
+                <!-- Session items will be dynamically injected here -->
+            </div>
+
+            <div style="margin-top: auto; padding-top: 2rem;">
+                <a href="history.html" class="btn btn-outline" style="width: 100%; margin-bottom: 1rem;">View Full
+                    History</a>
+                <button id="logout-btn" class="btn btn-outline"
+                    style="width: 100%; border-color: rgba(239, 68, 68, 0.5); color: #ef4444;">Logout</button>
+            </div>
+        </aside>
+
+        <main class="chat-area">
+            <header class="chat-header">
+                <div class="chat-title">
+                    <h2 id="chat-title">Current Session</h2>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);" id="user-greeting">Loading...</p>
+                </div>
+            </header>
+
+            <div class="chat-messages" id="chat-messages">
+                <div class="chat-bubble sys-bubble">
+                    Hello! I'm here to listen. How are you feeling today?
+                </div>
+            </div>
+
+            <form class="chat-input-area" id="chat-form">
+                <input type="text" id="chat-input" placeholder="Type your message here..." autocomplete="off" required>
+                <button type="submit" class="btn btn-primary" id="send-btn">Send</button>
+            </form>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+
+</html>
