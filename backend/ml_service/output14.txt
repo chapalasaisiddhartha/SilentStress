@@ -1,0 +1,9 @@
+﻿Model Log Odds Analysis:
+-------------------------
+'happy': -6.6669 (Positive = Stress, Negative = No Stress)
+'dance': -3.8010 (Positive = Stress, Negative = No Stress)
+'dancing': -3.7360 (Positive = Stress, Negative = No Stress)
+'enjoy': -3.7949 (Positive = Stress, Negative = No Stress)
+'waste': 10.1985 (Positive = Stress, Negative = No Stress)
+'not': 24.0498 (Positive = Stress, Negative = No Stress)
+'chill': -3.6686 (Positive = Stress, Negative = No Stress)

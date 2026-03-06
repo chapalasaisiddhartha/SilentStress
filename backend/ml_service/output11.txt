@@ -1,0 +1,36 @@
+﻿Testing messages against the Flask API...
+
+--- "i feel chill" ---
+Prediction: High
+Stress Score: 79.43
+Reply:      That sounds really overwhelming.
+
+--- "i am enjoy" ---
+Prediction: Low
+Stress Score: 32.67
+Reply:      You sound relaxed today.
+
+--- "i feel not enjoy" ---
+Prediction: High
+Stress Score: 98.4
+Reply:      Maybe try taking a slow deep breath.
+
+--- "no model is waste looking" ---
+Prediction: High
+Stress Score: 96.97
+Reply:      That sounds really overwhelming.
+
+--- "this is a waste of time" ---
+Prediction: Medium
+Stress Score: 64.74
+Reply:      I'm here to listen if you want to talk.
+
+--- "the model is useless" ---
+Prediction: High
+Stress Score: 81.98
+Reply:      Maybe try taking a slow deep breath.
+
+--- "not chill" ---
+Prediction: High
+Stress Score: 98.41
+Reply:      Maybe try taking a slow deep breath.

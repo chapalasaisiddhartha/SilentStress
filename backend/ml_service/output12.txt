@@ -1,0 +1,21 @@
+﻿Testing 'dancing' edge-cases against the Flask API...
+
+--- "i feel dancing" ---
+Prediction: High
+Stress Score: 77.07
+Reply:      Maybe try taking a slow deep breath.
+
+--- "i want to dance" ---
+Prediction: Medium
+Stress Score: 52.89
+Reply:      Sometimes sharing helps reduce stress.
+
+--- "dancing" ---
+Prediction: Neutral
+Stress Score: 0
+Reply:      Could you tell me a bit more?
+
+--- "i am dancing" ---
+Prediction: Medium
+Stress Score: 40.26
+Reply:      It sounds like you're dealing with something.

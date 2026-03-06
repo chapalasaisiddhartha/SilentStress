@@ -38,7 +38,7 @@ exports.deleteSession = async (req, res) => {
         }
 
         await MessageLog.deleteMany({ sessionId: req.params.id });
-        await session.remove();
+        await ChatSession.deleteOne({ _id: req.params.id });
 
         res.json({ msg: 'Session removed' });
     } catch (err) {
@@ -60,17 +60,12 @@ exports.sendMessage = async (req, res) => {
         // Call ML service
         const mlResult = await getPrediction(text);
 
-        // Simple bot logic
-        const botResponse = mlResult.prediction === 'Stress'
-            ? "I sense some stress in your message. Take a deep breath. I'm here to listen."
-            : "I hear you. Feel free to share more if you'd like.";
-
         const message = new MessageLog({
             sessionId,
             userText: text,
-            botResponse,
+            botResponse: mlResult.botResponse,
             stressPrediction: mlResult.prediction,
-            confidenceScore: mlResult.confidence
+            confidenceScore: mlResult.stressScore
         });
 
         await message.save();

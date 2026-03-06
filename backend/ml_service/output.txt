@@ -1,0 +1,46 @@
+﻿Testing messages against the Flask API...
+
+--- "feeling heavy" ---
+Prediction: High
+Stress Score: 80.77
+Reply:      You seem very stressed.
+
+--- "i want to dance" ---
+Prediction: Medium
+Stress Score: 60.23
+Reply:      It sounds like you're dealing with something.
+
+--- "feeling lite" ---
+Prediction: High
+Stress Score: 89.57
+Reply:      You seem very stressed.
+
+--- "feeling happy" ---
+Prediction: Low
+Stress Score: 20
+Reply:      You sound relaxed today.
+
+--- "i feel fasticinated" ---
+Prediction: High
+Stress Score: 94.03
+Reply:      You seem very stressed.
+
+--- "i feel facinated" ---
+Prediction: High
+Stress Score: 94.03
+Reply:      That sounds really overwhelming.
+
+--- "fascinated" ---
+Prediction: Neutral
+Stress Score: 0
+Reply:      Could you tell me a bit more?
+
+--- "dull" ---
+Prediction: Neutral
+Stress Score: 0
+Reply:      Could you tell me a bit more?
+
+--- "i am dull" ---
+Prediction: Medium
+Stress Score: 59.66
+Reply:      It sounds like you're dealing with something.

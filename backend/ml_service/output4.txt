@@ -1,0 +1,36 @@
+﻿Testing messages against the Flask API...
+
+--- "i am not happy" ---
+Prediction: Low
+Stress Score: 0.05
+Reply:      Glad things seem calm for you.
+
+--- "i am happy" ---
+Prediction: Low
+Stress Score: 5
+Reply:      That's nice to hear.
+
+--- "i do not want to dance" ---
+Prediction: Low
+Stress Score: 5
+Reply:      Glad things seem calm for you.
+
+--- "not feeling wonderful" ---
+Prediction: Low
+Stress Score: 5
+Reply:      You sound relaxed today.
+
+--- "i am not relaxed" ---
+Prediction: Low
+Stress Score: 39.58
+Reply:      That's nice to hear.
+
+--- "not calm at all" ---
+Prediction: Low
+Stress Score: 13.46
+Reply:      That's nice to hear.
+
+--- "not feeling lite" ---
+Prediction: Low
+Stress Score: 10
+Reply:      You sound relaxed today.

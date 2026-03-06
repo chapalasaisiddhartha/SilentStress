@@ -69,8 +69,24 @@ async function loadSessions() {
 
             const div = document.createElement('div');
             div.className = `session-item ${index === 0 && !currentSessionId ? 'active' : ''}`;
-            div.innerHTML = `<span>Session ${date}</span>`;
-            div.onclick = () => loadSessionData(session._id, div);
+            div.style.display = 'flex';
+            div.style.justifyContent = 'space-between';
+            div.style.alignItems = 'center';
+
+            div.innerHTML = `
+                <span class="session-label" style="flex-grow: 1; cursor: pointer;">Session ${date}</span>
+                <span class="delete-btn" style="cursor: pointer; color: #ef4444; font-size: 1.1em; padding-left: 10px;" title="Delete Chat">🗑️</span>
+            `;
+
+            div.querySelector('.session-label').onclick = () => loadSessionData(session._id, div);
+
+            div.querySelector('.delete-btn').onclick = async (e) => {
+                e.stopPropagation();
+                if (confirm('Are you sure you want to delete this chat session?')) {
+                    await deleteSession(session._id, div);
+                }
+            };
+
             sessionList.appendChild(div);
 
             // Auto-load first session if no current session
@@ -139,8 +155,23 @@ function appendMessage(sender, text, prediction = null) {
 
     if (sender === 'sys' && prediction) {
         const badge = document.createElement('span');
-        badge.className = `badge ${prediction === 'Stress' ? 'badge-stress' : 'badge-none'}`;
-        badge.innerText = prediction === 'Stress' ? 'Stress Detected' : 'No Stress';
+
+        let badgeClass = 'badge-none';
+        let badgeText = 'Neutral';
+
+        if (prediction === 'High') {
+            badgeClass = 'badge-stress';
+            badgeText = 'High Stress Detected';
+        } else if (prediction === 'Medium') {
+            badgeClass = 'badge-stress'; // you can add badge-medium in css later if desired
+            badgeText = 'Moderate Stress';
+        } else if (prediction === 'Low') {
+            badgeClass = 'badge-none';
+            badgeText = 'Low Stress';
+        }
+
+        badge.className = `badge ${badgeClass}`;
+        badge.innerText = badgeText;
         bubble.appendChild(badge);
     }
 
@@ -151,4 +182,27 @@ function appendMessage(sender, text, prediction = null) {
 function scrollToBottom() {
     const chatContainer = document.getElementById('chat-messages');
     chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+async function deleteSession(sessionId, element) {
+    try {
+        await fetchAPI(`/chat/session/${sessionId}`, { method: 'DELETE' });
+
+        // Remove element from DOM immediately
+        element.remove();
+
+        // If the active session was deleted, clear UI and reload to pick the next available session
+        if (currentSessionId === sessionId) {
+            currentSessionId = null;
+            document.getElementById('chat-messages').innerHTML = `
+                <div class="chat-bubble sys-bubble">
+                    Hello! I'm here to listen. How are you feeling today?
+                </div>
+            `;
+            loadSessions();
+        }
+    } catch (err) {
+        console.error('Failed to delete session', err);
+        alert('Failed to delete chat session.');
+    }
 }
