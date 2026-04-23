@@ -43,7 +43,7 @@ exports.register = async (req, res) => {
         res.json({ msg: 'Registration successful! Please check your email for the OTP.', email: user.email });
     } catch (err) {
         console.error(err.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ msg: 'Server error' });
     }
 };
 
@@ -72,7 +72,7 @@ exports.login = async (req, res) => {
         });
     } catch (err) {
         console.error(err.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ msg: 'Server error' });
     }
 };
 
@@ -101,7 +101,7 @@ exports.forgotPassword = async (req, res) => {
         res.json({ msg: 'If an account with that email exists, an OTP was sent.', email: user.email });
     } catch (err) {
         console.error(err.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ msg: 'Server error' });
     }
 };
 
@@ -147,7 +147,7 @@ exports.resetPassword = async (req, res) => {
         });
     } catch (err) {
         console.error(err.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ msg: 'Server error' });
     }
 };
 
@@ -185,6 +185,6 @@ exports.verifyOTP = async (req, res) => {
 
     } catch (err) {
         console.error(err.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ msg: 'Server error' });
     }
 };

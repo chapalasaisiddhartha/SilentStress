@@ -1,0 +1,6 @@
+@echo off
+echo Starting Node.js Backend...
+start cmd /k "cd backend && node server.js"
+
+echo Opening Frontend...
+start frontend\index.html
